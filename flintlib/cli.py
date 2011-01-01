@@ -72,6 +72,8 @@ def cli_init(pre_options, pre_args, command, post_options):
 
     config = flintConfig(working_dir, force)
     config.create(resume_name)
+    # Now, edit the config file
+    (bhash, ahash, bsize, asize) = cli_util.launch_editor(config.config_file)
 
 class Command:
     def __init__(self, short_opts, long_opts, usage, summary, desc, callback):

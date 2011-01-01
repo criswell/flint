@@ -30,7 +30,7 @@ class Config:
         @param force Whether operations should be forced or not
         '''
         self._cwd = cwd
-        self._config_file = "%s/.flintrc" % self._cwd
+        self.config_file = "%s/.flintrc" % self._cwd
         self._force = force
         self._config = configparser.ConfigParser()
         self.config_set = False
@@ -70,6 +70,6 @@ class Config:
         '''
         Saves the config
         '''
-        fp = open(self._config_file, mode="w")
+        fp = open(self.config_file, mode="w")
         self._config.write(fp)
         fp.close()
