@@ -84,6 +84,14 @@ option_dispatch = {
          '  -v|--verbose    Be verbose about actions',
          "  -f|--force      Force even if directory isn't empty"],
         cli_init),
+    'help' : Command(
+        None,
+        None,
+        'flint help [COMMAND]',
+        'Gives help for flint',
+        ['   If called with no [COMMAND], will give general help',
+         '   and exit. Otherwise, will print help for [COMMAND].'],
+         cli_help),
 
 }
 
