@@ -16,6 +16,9 @@
 
 import getopt
 import cli_util
+import os
+
+from flintlib.config import Config as flintConfig
 
 # Callbacks
 
@@ -51,8 +54,24 @@ def cli_help(pre_options, pre_args, command, post_options):
 
 def cli_init(pre_options, pre_args, command, post_options):
     '''
+    Command line init method
     '''
-    print "Hello!"
+    verbose = 0
+    force = False
+    working_dir = os.getcwd()
+    resume_name =  os.path.split(working_dir)[-1]
+    if post_options:
+        working_dir = post_options[0]
+        resume_name = working_dir
+
+    for o, a in pre_options:
+        if o in ("-v", "--verbose"):
+            verbose = verbose + 1
+        if o in ("-f", "--force"):
+            force = True
+
+    config = flintConfig(working_dir, force)
+    config.create(resume_name)
 
 class Command:
     def __init__(self, short_opts, long_opts, usage, summary, desc, callback):

@@ -32,3 +32,12 @@ class Config:
         self._cwd = cwd
         self._force = force
         self._config = configparser.ConfigParser()
+
+    def create(self, resume_name):
+        '''
+        Creates a default configuration file for the previously set working
+        directory.
+        @param resume_name The resume name to associate with this resume
+        '''
+        self._config.add_section("main")
+        self._config.set("main", "resume_name", resume_name)
