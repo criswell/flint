@@ -30,8 +30,10 @@ class Config:
         @param force Whether operations should be forced or not
         '''
         self._cwd = cwd
+        self._config_file = "%s/.flintrc" % self._cwd
         self._force = force
         self._config = configparser.ConfigParser()
+        self.config_set = False
 
     def create(self, resume_name):
         '''
@@ -41,3 +43,33 @@ class Config:
         '''
         self._config.add_section("main")
         self._config.set("main", "resume_name", resume_name)
+
+        # Some silly defaults we will want the user to overwrite
+        # FIXME - It would be lovely if these could also be stored system-wide
+        # and then loaded (optionally) from there
+        self._config.add_section("contact")
+        self._config.set("contact", "author", "YOUR NAME HERE")
+        self._config.set("contact", "address_line1", "ADDRESS 01")
+        self._config.set("contact", "address_line2", "ADDRESS 02")
+        self._config.set("contact", "address_line3", "ADDRESS 03")
+        # FIXME this is pretty US centric, if anyone else cares about it, we
+        # will want to fix it
+        self._config.set("contact", "city", "CITY")
+        self._config.set("contact", "state", "STATE")
+        self._config.set("contact", "zip", "ZIP")
+        self._config.set("contact", "phone", "PHONE")
+        self._config.set("contact", "url1", "URL 01")
+        self._config.set("contact", "url2", "URL 02")
+        self._config.set("contact", "url3", "URL 03")
+
+        self._save()
+
+        self.config_set = True
+
+    def _save(self):
+        '''
+        Saves the config
+        '''
+        fp = open(self._config_file, mode="w")
+        self._config.write(fp)
+        fp.close()
