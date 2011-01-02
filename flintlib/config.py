@@ -15,7 +15,7 @@
 
 try:
     import configparser
-except ImportError
+except ImportError:
     import ConfigParser as configparser
 
 class Config:

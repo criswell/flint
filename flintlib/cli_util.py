@@ -72,7 +72,9 @@ def launch_editor(name):
     bstat = os.stat(name)
     bsize = bstat.st_size
     fd = file(name, 'rb')
-    bhash = md5.new(fd.read()).digest()
+    bhash = hashlib.md5()
+    bhash.update(fd.read())
+    bhash.digest()
     fd.close()
 
     # TODO: Right now, we just use $EDITOR from the system environement, but later on
@@ -86,7 +88,9 @@ def launch_editor(name):
     astat = os.stat(name)
     asize = astat.st_size
     fd = file(name, 'rb')
-    ahash = md5.new(fd.read()).digest()
+    ahash = hashlib.md5()
+    ahash.update(fd.read())
+    ahash.digest()
     fd.close()
 
     return (bhash, ahash, bsize, asize)
