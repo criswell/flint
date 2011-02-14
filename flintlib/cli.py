@@ -70,6 +70,11 @@ def cli_init(pre_options, pre_args, command, post_options):
         if o in ("-f", "--force"):
             force = True
 
+    # Check if the directory exists
+    if not os.path.isdir(working_dir):
+        # Go ahead and create it then
+        os.mkdir(working_dir)
+
     config = flintConfig(working_dir, force)
     config.create(resume_name)
     # Now, edit the config file
