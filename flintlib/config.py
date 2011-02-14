@@ -58,9 +58,9 @@ class Config:
         self._config.set("contact", "state", "STATE")
         self._config.set("contact", "zip", "ZIP")
         self._config.set("contact", "phone", "PHONE")
-        self._config.set("contact", "url1", "URL 01 (like an email)")
-        self._config.set("contact", "url2", "URL 02 (like a homepage)")
-        self._config.set("contact", "url3", "URL 03 (like an ohloh profile)")
+        self._config.set("contact", "email", "EMAIL ADDRESS")
+        self._config.set("contact", "url1", "URL 01 (like a homepage)")
+        self._config.set("contact", "url2", "URL 02 (like an ohloh profile)")
 
         self._save()
 
