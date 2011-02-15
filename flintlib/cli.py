@@ -84,7 +84,9 @@ def cli_init(pre_options, pre_args, command, post_options):
     (bhash, ahash, bsize, asize) = cli_util.launch_editor(config.config_file)
 
     # Make the directories
-    for d in [TEMPLATE_DIRECTORY, TEMPLATE_HTML, TEMPLATE_DOCX, TEMPLATE_PDF]:
+    for d in [TEMPLATE_DIRECTORY, TEMPLATE_HTML, TEMPLATE_DOCX, TEMPLATE_PDF,
+              OUTPUT_DIRECTORY, OUTPUT_HTML, OUTPUT_DOCX, OUTPUT_PDF,
+              ENTRY_DIRECTORY]:
         full_dir = "%s/%s" % (working_dir, d)
         if not os.path.isdir(full_dir):
             os.mkdir(full_dir)

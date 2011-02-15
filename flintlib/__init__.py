@@ -15,14 +15,24 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # directory definitions
-TEMPLATE_DIRECTORY = "templates"
 HTML_DIRECTORY = "html"
 DOCX_DIRECTORY = "docx"
 PDF_DIRECTORY = "pdf"
 
+# Template directories
+TEMPLATE_DIRECTORY = "templates"
 TEMPLATE_HTML = "%s/%s" % (TEMPLATE_DIRECTORY, HTML_DIRECTORY)
 TEMPLATE_DOCX = "%s/%s" % (TEMPLATE_DIRECTORY, DOCX_DIRECTORY)
 TEMPLATE_PDF = "%s/%s" % (TEMPLATE_DIRECTORY, PDF_DIRECTORY)
+
+# Output directories
+OUTPUT_DIRECTORY = "output"
+OUTPUT_HTML = "%s/%s" % (OUTPUT_DIRECTORY, HTML_DIRECTORY)
+OUTPUT_DOCX = "%s/%s" % (OUTPUT_DIRECTORY, DOCX_DIRECTORY)
+OUTPUT_PDF = "%s/%s" % (OUTPUT_DIRECTORY, PDF_DIRECTORY)
+
+# Entries
+ENTRY_DIRECTORY = "entries"
 
 # Config directories
 CONFIG_DIRECTORY = ".flint"
