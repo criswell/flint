@@ -19,6 +19,7 @@ import cli_util
 import os
 
 from flintlib.config import Config as flintConfig
+from flintlib import *
 
 # Callbacks
 
@@ -83,6 +84,7 @@ def cli_init(pre_options, pre_args, command, post_options):
     (bhash, ahash, bsize, asize) = cli_util.launch_editor(config.config_file)
 
     # Make the directories
+    for d in ['TEMPLATE_DIRECTORY', 
 
 class Command:
     def __init__(self, short_opts, long_opts, usage, summary, desc, callback):
