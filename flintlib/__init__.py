@@ -14,3 +14,16 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# directory definitions
+TEMPLATE_DIRECTORY = "templates"
+HTML_DIRECTORY = "html"
+DOCX_DIRECTORY = "docx"
+PDF_DIRECTORY = "pdf"
+
+TEMPLATE_HTML = "%s/%s" % (TEMPLATE_DIRECTORY, HTML_DIRECTORY)
+TEMPLATE_DOCX = "%s/%s" % (TEMPLATE_DIRECTORY, DOCX_DIRECTORY)
+TEMPLATE_PDF = "%s/%s" % (TEMPLATE_DIRECTORY, PDF_DIRECTORY)
+
+# Config directories
+CONFIG_DIRECTORY = ".flint"
+CONFIG_FILE = "flintrc"

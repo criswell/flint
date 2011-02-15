@@ -18,6 +18,8 @@ try:
 except ImportError:
     import ConfigParser as configparser
 
+from flintlib import *
+
 class Config:
     '''
     The flint configuration class
@@ -30,7 +32,8 @@ class Config:
         @param force Whether operations should be forced or not
         '''
         self._cwd = cwd
-        self.config_file = "%s/.flintrc" % self._cwd
+        self.config_dir = "%s/%s" % (self._cwd, CONFIG_DIRECTORY)
+        self.config_file = "%s/%s" % (self.config_dir, CONFIG_FILE)
         self._force = force
         self._config = configparser.ConfigParser()
         self.config_set = False
