@@ -84,7 +84,10 @@ def cli_init(pre_options, pre_args, command, post_options):
     (bhash, ahash, bsize, asize) = cli_util.launch_editor(config.config_file)
 
     # Make the directories
-    for d in ['TEMPLATE_DIRECTORY', 
+    for d in [TEMPLATE_DIRECTORY, TEMPLATE_HTML, TEMPLATE_DOCX, TEMPLATE_PDF]:
+        full_dir = "%s/%s" % (working_dir, d)
+        if not os.path.isdir(full_dir):
+            os.mkdir(full_dir)
 
 class Command:
     def __init__(self, short_opts, long_opts, usage, summary, desc, callback):
