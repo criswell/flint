@@ -14,6 +14,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from flintlib import *
+from flintlib.template import *
 
 class TemplateServices(object):
     '''
@@ -29,3 +30,13 @@ class TemplateServices(object):
         self._cwd = cwd
         self._force = force
         self._config = config
+        self._key_systemwide = 'systemwide'
+        self._templates = {}
+        self._queue_systemwide_templates()
+
+    def _queue_systemwide_templates(self):
+        '''
+        Find the system-wide templates
+        '''
+        if not self._templates.has_key(self._key_systemwide):
+            self._templates.
