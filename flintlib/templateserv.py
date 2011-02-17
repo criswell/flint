@@ -15,8 +15,17 @@
 
 from flintlib import *
 
-class TemplateBase(object):
+class TemplateServices(object):
     '''
-    The base definition of a template
+    Flint's general purpose template services
     '''
-
+    def __init__(self, config, cwd, force=False):
+        '''
+        Constructor for the template services
+        @param config the current config instance
+        @param cwd the current working directory
+        @param force Whether operations should be forced or not
+        '''
+        self._cwd = cwd
+        self._force = force
+        self._config = config
