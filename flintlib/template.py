@@ -15,6 +15,12 @@
 
 from flintlib import *
 
+class TemplateBase(object):
+    '''
+    The base definition of a template
+    '''
+
+
 class TemplateSystem(object):
     '''
     Flint's general purpose templating system
