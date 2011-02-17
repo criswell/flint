@@ -15,8 +15,53 @@
 
 from flintlib import *
 
+class HTML(type):
+    '''
+    Just a convenience data type for our HTML types
+    '''
+    pass
+
+class PDF(type):
+    '''
+    Just a convenience data type for our PDF types
+    '''
+    pass
+
+class DOCX(type):
+    '''
+    Just a convenience data type for our DOCX types
+    '''
+    pass
+
 class TemplateBase(object):
     '''
     The base definition of a template
     '''
+    def __init__(self, uri, available):
+        '''
+        @param uri the path to the template
+        @param available whether the template is available in the current working environment or not
+        '''
+        self.uri = uri
+        self.available = available
 
+    template_type = None
+
+class TemplateHTML(TemplateBase):
+    '''
+    Base template for HTML
+    '''
+
+    template_type = HTML
+
+class TemplatePDF(TemplateBase):
+    '''
+    Base template for PDF
+    '''
+    template_type = PDF
+
+class TemplateDOCX(TemplateBase):
+    '''
+    Base template for DOCX
+    '''
+    template_type = DOCX
