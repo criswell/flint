@@ -1,0 +1,17 @@
+                         Templates Overview
+                        Sam Hart, 2010, 2011
+----------------------------------------------------------------------------
+1) Introduction
+2) HTML Templates
+----------------------------------------------------------------------------
+
+1) Introduction
+
+    This README file will cover the technical details that flint expects for
+each template.
+
+2) HTML Templates
+
+    HTML resume templates consist of the following files:
+
+        * main.html (required) - This file is the main HTML resume.
